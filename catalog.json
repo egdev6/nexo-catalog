@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "apps": [
+    {
+      "id": "antena",
+      "name": "Antena",
+      "tagline": "Local alerts, chat bot and widgets for Meld Studio",
+      "description": "Free, local alerts, chat bot, timers, widgets, giveaways and tier lists for Meld Studio on Twitch and YouTube, fully controllable via MCP.",
+      "tags": [
+        "Streaming",
+        "Meld Studio",
+        "Twitch",
+        "YouTube"
+      ],
+      "iconUrl": "https://egdev6.github.io/nexo-catalog/icons/antena.png",
+      "installerUrl": "https://github.com/egdev6/antena/releases/download/v0.15.0/antena_0.15.0_x64-setup.exe",
+      "latestJsonUrl": "https://github.com/egdev6/antena/releases/latest/download/latest.json",
+      "integrationLevel": "update",
+      "releasedAt": "2026-11-14T08:48:36Z",
+      "featured": true,
+      "version": "0.15.0",
+      "links": {
+        "github": "https://github.com/egdev6/antena"
+      },
+      "news": [
+        {
+          "id": "v0-15-0",
+          "title": "Antena 0.15.0",
+          "text": "A new Antena release is available.",
+          "publishedAt": "2026-11-14T08:48:36Z",
+          "kind": "update"
+        }
+      ]
+    },
+    {
+      "id": "quorb",
+      "name": "Quorb",
+      "tagline": "Your AI quotas, always in sight",
+      "description": "Edge-docked usage rings for Claude, Codex, Gemini, Cursor, Copilot, OpenRouter and more on Windows: live limits, burn rate, history and alerts.",
+      "tags": [
+        "AI",
+        "Productivity",
+        "Windows"
+      ],
+      "iconUrl": "https://egdev6.github.io/nexo-catalog/icons/quorb.png",
+      "installerUrl": "https://github.com/egdev6/quorb/releases/download/v0.8.0/Quorb_0.8.0_x64-setup.exe",
+      "latestJsonUrl": "https://github.com/egdev6/quorb/releases/latest/download/latest.json",
+      "integrationLevel": "update",
+      "releasedAt": "2026-10-28T14:55:56Z",
+      "featured": false,
+      "version": "0.8.0",
+      "links": {
+        "github": "https://github.com/egdev6/quorb"
+      },
+      "news": [
+        {
+          "id": "v0-8-0",
+          "title": "Quorb 0.8.0",
+          "text": "A new Quorb release is available.",
+          "publishedAt": "2026-10-28T14:55:56Z",
+          "kind": "update"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/nexo/catalog-v1-v2.schema.json",
+  "title": "Nexo official catalog, versions 1 and 2",
+  "description": "Shape validation must be followed by domain validation (including uniqueness by id). The $id is illustrative, not a publication URL.",
+  "type": "object",
+  "required": ["schemaVersion", "apps"],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": { "enum": [1, 2] },
+    "apps": { "type": "array" }
+  },
+  "oneOf": [
+    { "properties": { "schemaVersion": { "const": 1 }, "apps": { "items": { "$ref": "#/$defs/appV1" } } } },
+    { "properties": { "schemaVersion": { "const": 2 }, "apps": { "items": { "$ref": "#/$defs/appV2" } } } }
+  ],
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[a-z0-9-]+$", "not": { "pattern": "[^a-z0-9-]" } },
+    "text": { "type": "string", "pattern": "[^\\s\\u0085]" },
+    "https": { "type": "string", "format": "iri", "pattern": "^https://[^/?#\\s@\\\\]+(?:[/?#][^\\s]*)?$", "not": { "pattern": "[\\u0000-\\u001f\\u007f-\\u009f]" } },
+    "timestamp": { "type": "string", "format": "date-time", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$" },
+    "semver": { "type": "string", "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(-[0-9A-Za-z-]+(\\.[0-9A-Za-z-]+)*)?(\\+[0-9A-Za-z-]+(\\.[0-9A-Za-z-]+)*)?$" },
+    "links": {
+      "type": "object", "additionalProperties": false,
+      "properties": { "github": { "$ref": "#/$defs/https" }, "youtube": { "$ref": "#/$defs/https" } }
+    },
+    "news": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "title", "text", "publishedAt", "kind"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" }, "title": { "$ref": "#/$defs/text" }, "text": { "$ref": "#/$defs/text" },
+        "publishedAt": { "$ref": "#/$defs/timestamp" }, "kind": { "enum": ["new", "featured", "update"] }
+      }
+    },
+    "windowsDetection": {
+      "type": "object", "additionalProperties": false,
+      "required": ["displayName", "publisher", "executableRelativePath"],
+      "properties": {
+        "displayName": { "$ref": "#/$defs/text" }, "publisher": { "$ref": "#/$defs/text" },
+        "executableRelativePath": {
+          "type": "string", "pattern": "\\.[eE][xX][eE]$",
+          "allOf": [
+            { "not": { "pattern": "[<>:\"|?*\\u0000-\\u001f\\u007f-\\u009f]" } },
+            { "not": { "pattern": "(^[\\\\/]|[\\\\/]{2}|[\\\\/]$)" } },
+            { "not": { "pattern": "(^|[\\\\/])[^\\\\/]*[ .]([\\\\/]|$)" } }
+          ]
+        }
+      }
+    },
+    "detection": {
+      "type": "object", "additionalProperties": false, "required": ["windows"],
+      "properties": { "windows": { "$ref": "#/$defs/windowsDetection" } }
+    },
+    "appV1": { "allOf": [{ "$ref": "#/$defs/app" }], "unevaluatedProperties": false },
+    "appV2": {
+      "allOf": [{ "$ref": "#/$defs/app" }], "unevaluatedProperties": false,
+      "properties": { "detection": { "$ref": "#/$defs/detection" } }
+    },
+    "app": {
+      "type": "object",
+      "required": ["id", "name", "tagline", "description", "tags", "installerUrl", "latestJsonUrl", "integrationLevel", "releasedAt", "featured", "news"],
+      "anyOf": [{ "required": ["iconUrl"] }, { "required": ["artUrl"] }],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" }, "name": { "$ref": "#/$defs/text" }, "tagline": { "$ref": "#/$defs/text" },
+        "description": { "$ref": "#/$defs/text" }, "tags": { "type": "array", "items": { "$ref": "#/$defs/text" } },
+        "iconUrl": { "$ref": "#/$defs/https" }, "artUrl": { "$ref": "#/$defs/https" },
+        "installerUrl": { "$ref": "#/$defs/https" }, "latestJsonUrl": { "$ref": "#/$defs/https" },
+        "integrationLevel": { "enum": ["full", "update", "launch"] }, "releasedAt": { "$ref": "#/$defs/timestamp" },
+        "featured": { "type": "boolean" }, "version": { "$ref": "#/$defs/semver" },
+        "links": { "$ref": "#/$defs/links" }, "news": { "type": "array", "items": { "$ref": "#/$defs/news" } }
+      }
+    }
+  }
+}

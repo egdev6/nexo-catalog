@@ -1,0 +1,51 @@
+name: Validate catalog
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate catalog
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Install validator
+        run: python3 -m pip install --user jsonschema==4.19.2
+
+      - name: Validate both catalogs against the schema
+        run: |
+          python3 - <<'PY'
+          import json
+          import sys
+          import jsonschema
+
+          schema = json.load(open('catalog.schema.json'))
+          validator = jsonschema.Draft202012Validator(schema)
+          failed = False
+          for path, version in (('catalog.json', 1), ('v2/catalog.json', 2)):
+              document = json.load(open(path))
+              errors = list(validator.iter_errors(document))
+              if document.get('schemaVersion') != version:
+                  errors.append(f'expected schemaVersion {version}')
+              ids = [app['id'] for app in document.get('apps', [])]
+              if len(ids) != len(set(ids)):
+                  errors.append('duplicate app ids')
+              if version == 1 and any('detection' in app for app in document.get('apps', [])):
+                  errors.append('v1 must not contain detection hints')
+              for error in errors:
+                  print(f'{path}: {getattr(error, "message", error)}')
+              failed = failed or bool(errors)
+              print(f'{path}: {"INVALID" if errors else "valid"}')
+          sys.exit(1 if failed else 0)
+          PY
