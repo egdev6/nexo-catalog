@@ -56,6 +56,13 @@
       "releasedAt": "2026-10-28T14:55:56Z",
       "featured": false,
       "version": "0.8.0",
+      "detection": {
+        "windows": {
+          "displayName": "Quorb",
+          "publisher": "egdev",
+          "executableRelativePath": "quorb.exe"
+        }
+      },
       "links": {
         "github": "https://github.com/egdev6/quorb"
       },
