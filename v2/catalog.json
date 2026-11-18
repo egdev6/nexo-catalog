@@ -13,16 +13,23 @@
         "YouTube"
       ],
       "iconUrl": "https://egdev6.github.io/nexo-catalog/icons/antena.png",
-      "installerUrl": "https://github.com/egdev6/antena/releases/download/v0.16.0/antena_0.16.0_x64-setup.exe",
+      "installerUrl": "https://github.com/egdev6/antena/releases/download/v0.17.0/antena_0.17.0_x64-setup.exe",
       "latestJsonUrl": "https://github.com/egdev6/antena/releases/latest/download/latest.json",
       "integrationLevel": "update",
-      "releasedAt": "2026-11-16T23:54:49Z",
+      "releasedAt": "2026-11-18T09:01:51Z",
       "featured": true,
-      "version": "0.16.0",
+      "version": "0.17.0",
       "links": {
         "github": "https://github.com/egdev6/antena"
       },
       "news": [
+        {
+          "id": "v0-17-0",
+          "title": "Antena 0.17.0",
+          "text": "Customizable dock, a «+N suscriptores» YouTube alert, the Nexo unified tray and a full security hardening.",
+          "publishedAt": "2026-11-18T09:01:51Z",
+          "kind": "update"
+        },
         {
           "id": "v0-16-0",
           "title": "Antena 0.16.0",
