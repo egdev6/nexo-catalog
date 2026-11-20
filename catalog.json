@@ -58,17 +58,24 @@
         "Windows"
       ],
       "iconUrl": "https://egdev6.github.io/nexo-catalog/icons/quorb.png",
-      "installerUrl": "https://github.com/egdev6/quorb/releases/download/v0.9.0/Quorb_0.9.0_x64-setup.exe",
+      "installerUrl": "https://github.com/egdev6/quorb/releases/download/v0.9.1/Quorb_0.9.1_x64-setup.exe",
       "latestJsonUrl": "https://github.com/egdev6/quorb/releases/latest/download/latest.json",
       "integrationLevel": "update",
-      "releasedAt": "2026-11-20T11:08:33Z",
+      "releasedAt": "2026-11-20T21:35:51Z",
       "featured": false,
-      "version": "0.9.0",
+      "version": "0.9.1",
       "links": {
         "github": "https://github.com/egdev6/quorb",
         "youtube": "https://youtu.be/0HFefLT4zIY"
       },
       "news": [
+        {
+          "id": "v0-9-1",
+          "title": "Quorb 0.9.1",
+          "text": "First Linux release (.deb and .AppImage) and Linux credentials that persist across reboots.",
+          "publishedAt": "2026-11-20T21:35:51Z",
+          "kind": "update"
+        },
         {
           "id": "v0-9-0",
           "title": "Quorb 0.9.0",
