@@ -20,7 +20,8 @@
       "featured": true,
       "version": "0.17.0",
       "links": {
-        "github": "https://github.com/egdev6/antena"
+        "github": "https://github.com/egdev6/antena",
+        "youtube": "https://www.youtube.com/live/7iP6Vn98be8"
       },
       "news": [
         {
@@ -64,7 +65,8 @@
       "featured": false,
       "version": "0.8.0",
       "links": {
-        "github": "https://github.com/egdev6/quorb"
+        "github": "https://github.com/egdev6/quorb",
+        "youtube": "https://youtu.be/0HFefLT4zIY"
       },
       "news": [
         {
