@@ -65,12 +65,12 @@
         "Windows"
       ],
       "iconUrl": "https://egdev6.github.io/nexo-catalog/icons/quorb.png",
-      "installerUrl": "https://github.com/egdev6/quorb/releases/download/v0.8.0/Quorb_0.8.0_x64-setup.exe",
-      "latestJsonUrl": "https://github.com/egdev6/quorb/releases/download/v0.8.0/latest.json",
+      "installerUrl": "https://github.com/egdev6/quorb/releases/download/v0.9.0/Quorb_0.9.0_x64-setup.exe",
+      "latestJsonUrl": "https://github.com/egdev6/quorb/releases/download/v0.9.0/latest.json",
       "integrationLevel": "update",
-      "releasedAt": "2026-10-28T14:55:56Z",
+      "releasedAt": "2026-11-20T11:08:33Z",
       "featured": false,
-      "version": "0.8.0",
+      "version": "0.9.0",
       "detection": {
         "windows": {
           "displayName": "Quorb",
@@ -82,6 +82,13 @@
         "github": "https://github.com/egdev6/quorb"
       },
       "news": [
+        {
+          "id": "v0-9-0",
+          "title": "Quorb 0.9.0",
+          "text": "NaN credits, WSL support on Windows, email alerts and the OpenCode Go and Antigravity providers.",
+          "publishedAt": "2026-11-20T11:08:33Z",
+          "kind": "update"
+        },
         {
           "id": "v0-8-0",
           "title": "Quorb 0.8.0",
