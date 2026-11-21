@@ -85,7 +85,7 @@
           "propertyNames": { "pattern": "^(windows|darwin|linux)-(x86_64|aarch64|i686|armv7)$" },
           "additionalProperties": { "$ref": "#/$defs/platformEntry" },
           "patternProperties": {
-            "^(darwin|linux)-": { "not": { "required": ["detection"] } }
+            "^(darwin|linux)-": { "allOf": [{ "$ref": "#/$defs/platformEntry" }, { "not": { "required": ["detection"] } }] }
           }
         }
       }
