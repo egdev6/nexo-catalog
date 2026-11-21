@@ -33,7 +33,7 @@ jobs:
           schema = json.load(open('catalog.schema.json'))
           validator = jsonschema.Draft202012Validator(schema)
           failed = False
-          for path, version in (('catalog.json', 1), ('v2/catalog.json', 2), ('v3/catalog.json', 3)):
+          for path, version in (('catalog.json', 1), ('v2/catalog.json', 2), ('v3/catalog.json', 3), ('v4/catalog.json', 4)):
               document = json.load(open(path))
               errors = list(validator.iter_errors(document))
               if document.get('schemaVersion') != version:
@@ -47,6 +47,11 @@ jobs:
                   for app in document.get('apps', []):
                       if 'updaterPublicKey' in app and not app.get('installerUrl', '').endswith('_x64-setup.exe'):
                           errors.append(f"{app.get('id')}: keyed apps must point to a per-user NSIS _x64-setup.exe")
+              if version == 4:
+                  for app in document.get('apps', []):
+                      for key, entry in app.get('platforms', {}).items():
+                          if key == 'windows-x86_64' and 'updaterPublicKey' in entry and not entry.get('installerUrl', '').endswith('_x64-setup.exe'):
+                              errors.append(f"{app.get('id')}: keyed windows-x86_64 entries must point to a per-user NSIS _x64-setup.exe")
               for error in errors:
                   print(f'{path}: {getattr(error, "message", error)}')
               failed = failed or bool(errors)

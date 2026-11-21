@@ -1,19 +1,20 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://example.com/nexo/catalog-v1-v2-v3.schema.json",
-  "title": "Nexo official catalog, versions 1, 2 and 3",
+  "$id": "https://example.com/nexo/catalog-v1-v4.schema.json",
+  "title": "Nexo official catalog, versions 1 to 4",
   "description": "Shape validation must be followed by domain validation (including uniqueness by id). The $id is illustrative, not a publication URL.",
   "type": "object",
   "required": ["schemaVersion", "apps"],
   "additionalProperties": false,
   "properties": {
-    "schemaVersion": { "enum": [1, 2, 3] },
+    "schemaVersion": { "enum": [1, 2, 3, 4] },
     "apps": { "type": "array" }
   },
   "oneOf": [
     { "properties": { "schemaVersion": { "const": 1 }, "apps": { "items": { "$ref": "#/$defs/appV1" } } } },
     { "properties": { "schemaVersion": { "const": 2 }, "apps": { "items": { "$ref": "#/$defs/appV2" } } } },
-    { "properties": { "schemaVersion": { "const": 3 }, "apps": { "items": { "$ref": "#/$defs/appV3" } } } }
+    { "properties": { "schemaVersion": { "const": 3 }, "apps": { "items": { "$ref": "#/$defs/appV3" } } } },
+    { "properties": { "schemaVersion": { "const": 4 }, "apps": { "items": { "$ref": "#/$defs/appV4" } } } }
   ],
   "$defs": {
     "id": { "type": "string", "pattern": "^[a-z0-9-]+$", "not": { "pattern": "[^a-z0-9-]" } },
@@ -58,6 +59,36 @@
     "appV2": {
       "allOf": [{ "$ref": "#/$defs/app" }], "unevaluatedProperties": false,
       "properties": { "detection": { "$ref": "#/$defs/detection" } }
+    },
+    "platformEntry": {
+      "type": "object", "additionalProperties": false,
+      "required": ["installerUrl", "latestJsonUrl", "version", "releasedAt"],
+      "properties": {
+        "installerUrl": { "$ref": "#/$defs/releaseAsset" }, "latestJsonUrl": { "$ref": "#/$defs/releaseAsset" },
+        "version": { "$ref": "#/$defs/semver" }, "releasedAt": { "$ref": "#/$defs/timestamp" },
+        "updaterPublicKey": { "$ref": "#/$defs/updaterPublicKey" },
+        "detection": { "$ref": "#/$defs/windowsDetection" }
+      }
+    },
+    "appV4": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "name", "tagline", "description", "tags", "integrationLevel", "featured", "news", "platforms"],
+      "anyOf": [{ "required": ["iconUrl"] }, { "required": ["artUrl"] }],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" }, "name": { "$ref": "#/$defs/text" }, "tagline": { "$ref": "#/$defs/text" },
+        "description": { "$ref": "#/$defs/text" }, "tags": { "type": "array", "items": { "$ref": "#/$defs/text" } },
+        "iconUrl": { "$ref": "#/$defs/https" }, "artUrl": { "$ref": "#/$defs/https" },
+        "integrationLevel": { "enum": ["full", "update", "launch"] }, "featured": { "type": "boolean" },
+        "links": { "$ref": "#/$defs/links" }, "news": { "type": "array", "items": { "$ref": "#/$defs/news" } },
+        "platforms": {
+          "type": "object", "minProperties": 1,
+          "propertyNames": { "pattern": "^(windows|darwin|linux)-(x86_64|aarch64|i686|armv7)$" },
+          "additionalProperties": { "$ref": "#/$defs/platformEntry" },
+          "patternProperties": {
+            "^(darwin|linux)-": { "allOf": [{ "$ref": "#/$defs/platformEntry" }, { "not": { "required": ["detection"] } }] }
+          }
+        }
+      }
     },
     "appV3": {
       "allOf": [{ "$ref": "#/$defs/app" }], "unevaluatedProperties": false,

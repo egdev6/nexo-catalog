@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 4,
+  "apps": [
+    {
+      "id": "antena",
+      "name": "Antena",
+      "tagline": "Local alerts, chat bot and widgets for Meld Studio",
+      "description": "Free, local alerts, chat bot, timers, widgets, giveaways and tier lists for Meld Studio on Twitch and YouTube, fully controllable via MCP.",
+      "tags": [
+        "Streaming",
+        "Meld Studio",
+        "Twitch",
+        "YouTube"
+      ],
+      "iconUrl": "https://egdev6.github.io/nexo-catalog/icons/antena.png",
+      "integrationLevel": "update",
+      "featured": true,
+      "links": {
+        "github": "https://github.com/egdev6/antena",
+        "youtube": "https://www.youtube.com/live/7iP6Vn98be8"
+      },
+      "news": [
+        {
+          "id": "v0-18-0",
+          "title": "Antena 0.18.0",
+          "text": "Live interviews, chat welcomes, stream streaks and YouTube gifts.",
+          "publishedAt": "2026-11-21T11:22:26Z",
+          "kind": "update"
+        },
+        {
+          "id": "v0-17-0",
+          "title": "Antena 0.17.0",
+          "text": "Customizable dock, a «+N suscriptores» YouTube alert, the Nexo unified tray and a full security hardening.",
+          "publishedAt": "2026-11-18T09:01:51Z",
+          "kind": "update"
+        },
+        {
+          "id": "v0-16-0",
+          "title": "Antena 0.16.0",
+          "text": "Experimental OBS Studio support and a full configuration copy with media and past streams.",
+          "publishedAt": "2026-11-16T23:54:49Z",
+          "kind": "update"
+        },
+        {
+          "id": "v0-15-0",
+          "title": "Antena 0.15.0",
+          "text": "A new Antena release is available.",
+          "publishedAt": "2026-11-14T08:48:36Z",
+          "kind": "update"
+        }
+      ],
+      "platforms": {
+        "windows-x86_64": {
+          "installerUrl": "https://github.com/egdev6/antena/releases/download/v0.18.0/antena_0.18.0_x64-setup.exe",
+          "latestJsonUrl": "https://github.com/egdev6/antena/releases/download/v0.18.0/latest.json",
+          "version": "0.18.0",
+          "releasedAt": "2026-11-21T11:22:26Z",
+          "updaterPublicKey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDQ2RkFBNEZCQjUwNTQxMDAKUldRQVFRVzErNlQ2UnJmZTl1MVpMWk9sUE82Skx0ZFRDZHFoNDRjTWlwU0NNYkJ2UzhwT1Z4YWQK",
+          "detection": {
+            "displayName": "antena",
+            "publisher": "EGDEV",
+            "executableRelativePath": "antena.exe"
+          }
+        }
+      }
+    },
+    {
+      "id": "quorb",
+      "name": "Quorb",
+      "tagline": "Your AI quotas, always in sight",
+      "description": "Edge-docked usage rings for Claude, Codex, Gemini, Cursor, Copilot, OpenRouter and more on Windows: live limits, burn rate, history and alerts.",
+      "tags": [
+        "AI",
+        "Productivity",
+        "Windows"
+      ],
+      "iconUrl": "https://egdev6.github.io/nexo-catalog/icons/quorb.png",
+      "integrationLevel": "update",
+      "featured": false,
+      "links": {
+        "github": "https://github.com/egdev6/quorb",
+        "youtube": "https://youtu.be/0HFefLT4zIY"
+      },
+      "news": [
+        {
+          "id": "v0-9-1",
+          "title": "Quorb 0.9.1",
+          "text": "First Linux release (.deb and .AppImage) and Linux credentials that persist across reboots.",
+          "publishedAt": "2026-11-20T21:35:51Z",
+          "kind": "update"
+        },
+        {
+          "id": "v0-9-0",
+          "title": "Quorb 0.9.0",
+          "text": "NaN credits, WSL support on Windows, email alerts and the OpenCode Go and Antigravity providers.",
+          "publishedAt": "2026-11-20T11:08:33Z",
+          "kind": "update"
+        },
+        {
+          "id": "v0-8-0",
+          "title": "Quorb 0.8.0",
+          "text": "A new Quorb release is available.",
+          "publishedAt": "2026-10-28T14:55:56Z",
+          "kind": "update"
+        }
+      ],
+      "platforms": {
+        "windows-x86_64": {
+          "installerUrl": "https://github.com/egdev6/quorb/releases/download/v0.9.1/Quorb_0.9.1_x64-setup.exe",
+          "latestJsonUrl": "https://github.com/egdev6/quorb/releases/download/v0.9.1/latest.json",
+          "version": "0.9.1",
+          "releasedAt": "2026-11-20T21:35:51Z",
+          "updaterPublicKey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDdGMzAxMjVBNzQ4QkI2MEYKUldRUHRvdDBXaEl3ZjA2QTRDQkNRQ1MveVlOQUtkdStQa2hENEpzcEw0YkU4aDBzWDRXUUpkTVIK",
+          "detection": {
+            "displayName": "Quorb",
+            "publisher": "egdev",
+            "executableRelativePath": "quorb.exe"
+          }
+        }
+      }
+    }
+  ]
+}
