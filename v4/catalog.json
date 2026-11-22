@@ -21,6 +21,13 @@
       },
       "news": [
         {
+          "id": "v0-19-0",
+          "title": "Antena 0.19.0",
+          "text": "Discord live announcements that update themselves, and scheduled streams from your stream calendar.",
+          "publishedAt": "2026-11-22T14:50:32Z",
+          "kind": "update"
+        },
+        {
           "id": "v0-18-1",
           "title": "Antena 0.18.1",
           "text": "Create, edit and run interviews from the panel and the dock, and stop them live without deleting them.",
@@ -47,21 +54,14 @@
           "text": "Experimental OBS Studio support and a full configuration copy with media and past streams.",
           "publishedAt": "2026-11-16T23:54:49Z",
           "kind": "update"
-        },
-        {
-          "id": "v0-15-0",
-          "title": "Antena 0.15.0",
-          "text": "A new Antena release is available.",
-          "publishedAt": "2026-11-14T08:48:36Z",
-          "kind": "update"
         }
       ],
       "platforms": {
         "windows-x86_64": {
-          "installerUrl": "https://github.com/egdev6/antena/releases/download/v0.18.1/antena_0.18.1_x64-setup.exe",
-          "latestJsonUrl": "https://github.com/egdev6/antena/releases/download/v0.18.1/latest.json",
-          "version": "0.18.1",
-          "releasedAt": "2026-11-21T19:01:32Z",
+          "installerUrl": "https://github.com/egdev6/antena/releases/download/v0.19.0/antena_0.19.0_x64-setup.exe",
+          "latestJsonUrl": "https://github.com/egdev6/antena/releases/download/v0.19.0/latest.json",
+          "version": "0.19.0",
+          "releasedAt": "2026-11-22T14:50:32Z",
           "updaterPublicKey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDQ2RkFBNEZCQjUwNTQxMDAKUldRQVFRVzErNlQ2UnJmZTl1MVpMWk9sUE82Skx0ZFRDZHFoNDRjTWlwU0NNYkJ2UzhwT1Z4YWQK",
           "detection": {
             "displayName": "antena",
