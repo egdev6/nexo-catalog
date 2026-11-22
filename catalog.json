@@ -13,17 +13,24 @@
         "YouTube"
       ],
       "iconUrl": "https://egdev6.github.io/nexo-catalog/icons/antena.png",
-      "installerUrl": "https://github.com/egdev6/antena/releases/download/v0.18.1/antena_0.18.1_x64-setup.exe",
+      "installerUrl": "https://github.com/egdev6/antena/releases/download/v0.19.0/antena_0.19.0_x64-setup.exe",
       "latestJsonUrl": "https://github.com/egdev6/antena/releases/latest/download/latest.json",
       "integrationLevel": "update",
-      "releasedAt": "2026-11-21T19:01:32Z",
+      "releasedAt": "2026-11-22T14:50:32Z",
       "featured": true,
-      "version": "0.18.1",
+      "version": "0.19.0",
       "links": {
         "github": "https://github.com/egdev6/antena",
         "youtube": "https://www.youtube.com/live/7iP6Vn98be8"
       },
       "news": [
+        {
+          "id": "v0-19-0",
+          "title": "Antena 0.19.0",
+          "text": "Discord live announcements that update themselves, and scheduled streams from your stream calendar.",
+          "publishedAt": "2026-11-22T14:50:32Z",
+          "kind": "update"
+        },
         {
           "id": "v0-18-1",
           "title": "Antena 0.18.1",
@@ -50,13 +57,6 @@
           "title": "Antena 0.16.0",
           "text": "Experimental OBS Studio support and a full configuration copy with media and past streams.",
           "publishedAt": "2026-11-16T23:54:49Z",
-          "kind": "update"
-        },
-        {
-          "id": "v0-15-0",
-          "title": "Antena 0.15.0",
-          "text": "A new Antena release is available.",
-          "publishedAt": "2026-11-14T08:48:36Z",
           "kind": "update"
         }
       ]
