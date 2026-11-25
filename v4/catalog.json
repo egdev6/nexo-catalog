@@ -21,6 +21,13 @@
       },
       "news": [
         {
+          "id": "v0-20-1",
+          "title": "Antena 0.20.1",
+          "text": "Independent alert background positioning, rotating on-screen messages and chat previews in Meld.",
+          "publishedAt": "2026-11-25T02:02:25Z",
+          "kind": "update"
+        },
+        {
           "id": "v0-20-0",
           "title": "Antena 0.20.0",
           "text": "Saved themes, plus custom overlays that follow the on-air scene and embed animated widget slots.",
@@ -47,21 +54,14 @@
           "text": "Live interviews, chat welcomes, stream streaks and YouTube gifts.",
           "publishedAt": "2026-11-21T11:22:26Z",
           "kind": "update"
-        },
-        {
-          "id": "v0-17-0",
-          "title": "Antena 0.17.0",
-          "text": "Customizable dock, a «+N suscriptores» YouTube alert, the Nexo unified tray and a full security hardening.",
-          "publishedAt": "2026-11-18T09:01:51Z",
-          "kind": "update"
         }
       ],
       "platforms": {
         "windows-x86_64": {
-          "installerUrl": "https://github.com/egdev6/antena/releases/download/v0.20.0/antena_0.20.0_x64-setup.exe",
-          "latestJsonUrl": "https://github.com/egdev6/antena/releases/download/v0.20.0/latest.json",
-          "version": "0.20.0",
-          "releasedAt": "2026-11-24T17:26:14Z",
+          "installerUrl": "https://github.com/egdev6/antena/releases/download/v0.20.1/antena_0.20.1_x64-setup.exe",
+          "latestJsonUrl": "https://github.com/egdev6/antena/releases/download/v0.20.1/latest.json",
+          "version": "0.20.1",
+          "releasedAt": "2026-11-25T02:02:25Z",
           "updaterPublicKey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDQ2RkFBNEZCQjUwNTQxMDAKUldRQVFRVzErNlQ2UnJmZTl1MVpMWk9sUE82Skx0ZFRDZHFoNDRjTWlwU0NNYkJ2UzhwT1Z4YWQK",
           "detection": {
             "displayName": "antena",
