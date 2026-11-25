@@ -21,6 +21,13 @@
       },
       "news": [
         {
+          "id": "v0-21-1",
+          "title": "Antena 0.21.1",
+          "text": "Changes made outside the panel now reach open forms and are no longer overwritten when you save.",
+          "publishedAt": "2026-11-25T15:02:57Z",
+          "kind": "update"
+        },
+        {
           "id": "v0-21-0",
           "title": "Antena 0.21.0",
           "text": "Custom widgets with settings forms, a social bar and a separate ticker with its own event types.",
@@ -47,21 +54,14 @@
           "text": "Discord live announcements that update themselves, and scheduled streams from your stream calendar.",
           "publishedAt": "2026-11-22T14:50:32Z",
           "kind": "update"
-        },
-        {
-          "id": "v0-18-1",
-          "title": "Antena 0.18.1",
-          "text": "Create, edit and run interviews from the panel and the dock, and stop them live without deleting them.",
-          "publishedAt": "2026-11-21T19:01:32Z",
-          "kind": "update"
         }
       ],
       "platforms": {
         "windows-x86_64": {
-          "installerUrl": "https://github.com/egdev6/antena/releases/download/v0.21.0/antena_0.21.0_x64-setup.exe",
-          "latestJsonUrl": "https://github.com/egdev6/antena/releases/download/v0.21.0/latest.json",
-          "version": "0.21.0",
-          "releasedAt": "2026-11-25T12:32:25Z",
+          "installerUrl": "https://github.com/egdev6/antena/releases/download/v0.21.1/antena_0.21.1_x64-setup.exe",
+          "latestJsonUrl": "https://github.com/egdev6/antena/releases/download/v0.21.1/latest.json",
+          "version": "0.21.1",
+          "releasedAt": "2026-11-25T15:02:57Z",
           "updaterPublicKey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDQ2RkFBNEZCQjUwNTQxMDAKUldRQVFRVzErNlQ2UnJmZTl1MVpMWk9sUE82Skx0ZFRDZHFoNDRjTWlwU0NNYkJ2UzhwT1Z4YWQK",
           "detection": {
             "displayName": "antena",
